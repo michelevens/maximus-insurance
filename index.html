@@ -115,8 +115,17 @@
     .powered span { font-size: 11px; color: #475569; }
     .powered a { color: #64748b; text-decoration: none; font-weight: 600; }
 
+    /* Careers */
+    .careers { padding: 80px 24px; background: linear-gradient(135deg, #f0f4ff 0%, #e8ecf8 100%); }
+    .careers-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .careers-info h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); margin-bottom: 12px; }
+    .careers-info p { color: var(--slate); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+    .careers-perks { list-style: none; }
+    .careers-perks li { padding: 10px 0; font-size: 14px; color: #334155; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .careers-perks li::before { content: '✓'; display: inline-flex; width: 24px; height: 24px; background: var(--gold); color: var(--navy); border-radius: 50%; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+
     @media (max-width: 768px) {
-      .hero-inner, .quote-inner { grid-template-columns: 1fr; }
+      .hero-inner, .quote-inner, .careers-inner { grid-template-columns: 1fr; }
       .services-grid, .test-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .hero h1 { font-size: 2.2rem; } .hero-stats { gap: 24px; }
@@ -133,6 +142,7 @@
         <a href="#services">Services</a>
         <a href="#quote">Get a Quote</a>
         <a href="#about">About</a>
+        <a href="#careers">Careers</a>
         <a href="#contact">Contact</a>
         <a href="#quote" class="nav-cta">Free Quote</a>
       </nav>
@@ -234,6 +244,26 @@
           <blockquote>"Been with Maximus 6 years. When my roof was damaged in a storm, they had the claim handled in days."</blockquote>
           <div class="test-author"><div class="test-avatar">MC</div><div><div class="test-name">Maria Chen</div><div class="test-role">Homeowner, Houston TX</div></div></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="careers" id="careers">
+    <div class="careers-inner">
+      <div class="careers-info">
+        <h2>Build Your Career with Maximus</h2>
+        <p>Join one of the fastest-growing independent agencies in the country. Our agents have access to 50+ top-rated carriers, advanced quoting technology, and a proven support system to help you succeed.</p>
+        <ul class="careers-perks">
+          <li>Access to 50+ A-rated carriers</li>
+          <li>Industry-leading commission structure</li>
+          <li>Full CRM & pipeline management tools</li>
+          <li>Dedicated mentorship & training program</li>
+          <li>Flexible remote work options</li>
+          <li>Performance bonuses & annual retreats</li>
+        </ul>
+      </div>
+      <div>
+        <script src="https://insurons.com/embed/insurons-team-widget.js" data-key="TEAM_KEY_MAXIMUS" data-mode="inline"></script>
       </div>
     </div>
   </section>
