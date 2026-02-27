@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maximus Insurance Group — Comprehensive Coverage Solutions</title>
+  <meta name="description" content="Maximus Insurance Group provides comprehensive auto, home, life, and commercial insurance. Licensed in all 50 states. Get instant quotes from 50+ carriers.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f172a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='20' font-weight='bold' fill='%23c9a227' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy: #0f172a; --navy-light: #1e293b; --gold: #c9a227; --gold-light: #e8d48b;
+      --slate: #64748b; --light: #f8fafc; --white: #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1e293b; line-height: 1.6; }
+
+    /* Header */
+    .header { background: var(--navy); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 800; color: var(--navy); }
+    .logo-text { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700; color: var(--white); letter-spacing: 0.5px; }
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav a { color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold) !important; color: var(--navy) !important; padding: 10px 24px; border-radius: 8px; font-weight: 600 !important; transition: transform 0.2s, box-shadow 0.2s !important; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(201,162,39,0.3); }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, #0c1a3a 60%, #132042 100%); color: white; padding: 100px 24px 120px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%); border-radius: 50%; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,162,39,0.12); border: 1px solid rgba(201,162,39,0.25); color: var(--gold-light); padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
+    .hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+    .hero h1 span { color: var(--gold); }
+    .hero p { font-size: 1.15rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 32px; max-width: 520px; }
+    .hero-stats { display: flex; gap: 40px; }
+    .hero-stat .number { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; font-weight: 700; color: var(--gold); }
+    .hero-stat .label { font-size: 13px; color: #94a3b8; margin-top: 2px; }
+    .hero-visual { background: rgba(255,255,255,0.04); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px; }
+    .hero-visual h3 { font-size: 18px; font-weight: 700; color: white; margin-bottom: 6px; }
+    .hero-visual > p { font-size: 14px; color: #94a3b8; margin-bottom: 20px; }
+
+    /* Carriers */
+    .carriers { background: var(--white); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 40px 24px; }
+    .carriers-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .carriers-label { font-size: 13px; font-weight: 600; color: var(--slate); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px; }
+    .carrier-logos { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .carrier-logo { font-size: 15px; font-weight: 700; color: #94a3b8; opacity: 0.6; }
+
+    /* Services */
+    .services { padding: 100px 24px; background: var(--light); }
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2.4rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .section-header p { font-size: 1.1rem; color: var(--slate); max-width: 560px; margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .service-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px; transition: transform 0.3s, box-shadow 0.3s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .service-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 22px; }
+    .service-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .service-card p { font-size: 14px; color: var(--slate); line-height: 1.65; }
+    .icon-auto { background: #eff6ff; } .icon-home { background: #f0fdf4; }
+    .icon-life { background: #fef3c7; } .icon-health { background: #fce7f3; }
+    .icon-biz { background: #f5f3ff; } .icon-spec { background: #ecfeff; }
+
+    /* Quote */
+    .quote-section { padding: 100px 24px; background: var(--white); }
+    .quote-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .quote-text h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2.2rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+    .quote-text p { font-size: 1.05rem; color: var(--slate); line-height: 1.7; margin-bottom: 28px; }
+    .quote-features { list-style: none; }
+    .quote-features li { display: flex; align-items: center; gap: 12px; padding: 10px 0; font-size: 15px; color: #334155; }
+    .quote-features li::before { content: '\2713'; width: 24px; height: 24px; background: #f0fdf4; color: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+    .quote-widget { background: var(--light); border: 1px solid #e2e8f0; border-radius: 20px; padding: 8px; min-height: 500px; }
+
+    /* Testimonials */
+    .testimonials { padding: 100px 24px; background: var(--navy); color: white; }
+    .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+    .testimonials .section-header h2 { color: white; }
+    .testimonials .section-header p { color: #94a3b8; }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .test-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; }
+    .test-stars { color: var(--gold); margin-bottom: 16px; font-size: 16px; letter-spacing: 2px; }
+    .test-card blockquote { font-size: 15px; color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .test-author { display: flex; align-items: center; gap: 12px; }
+    .test-avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(201,162,39,0.15); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--gold); font-size: 14px; }
+    .test-name { font-weight: 600; color: white; font-size: 14px; }
+    .test-role { font-size: 13px; color: #94a3b8; }
+
+    /* CTA */
+    .cta { padding: 80px 24px; background: linear-gradient(135deg, var(--gold) 0%, #b8911e 100%); text-align: center; }
+    .cta h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2.2rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .cta p { font-size: 1.1rem; color: #3d3016; margin-bottom: 28px; }
+    .cta-btn { display: inline-block; background: var(--navy); color: white; padding: 14px 36px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px; transition: transform 0.2s; }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,23,42,0.3); }
+
+    /* Footer */
+    .footer { background: var(--navy); color: #94a3b8; padding: 60px 24px 32px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 280px; margin-top: 16px; }
+    .footer h4 { color: white; font-size: 14px; font-weight: 600; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 10px; }
+    .footer ul a { color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .footer ul a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 12px; }
+    .footer-badges { display: flex; gap: 16px; }
+    .footer-badge { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+    .powered { text-align: center; padding: 12px; background: #0a0f1a; }
+    .powered span { font-size: 11px; color: #475569; }
+    .powered a { color: #64748b; text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .hero-inner, .quote-inner { grid-template-columns: 1fr; }
+      .services-grid, .test-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 2.2rem; } .hero-stats { gap: 24px; }
+      .nav { display: none; } .carrier-logos { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo"><div class="logo-mark">M</div><span class="logo-text">MAXIMUS</span></a>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#quote">Get a Quote</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#quote" class="nav-cta">Free Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">&#9733; Rated #1 Independent Agency in Texas</div>
+        <h1>Protect What Matters Most With <span>Maximus</span></h1>
+        <p>We've helped over 25,000 families and businesses find the perfect insurance coverage since 1998. Our independent agents compare rates from 50+ top-rated carriers to get you the best deal.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="number">25K+</div><div class="label">Clients Served</div></div>
+          <div class="hero-stat"><div class="number">50+</div><div class="label">Carrier Partners</div></div>
+          <div class="hero-stat"><div class="number">$340</div><div class="label">Avg. Annual Savings</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <h3>Get Your Instant Quote</h3>
+        <p>Compare rates from top carriers in under 60 seconds</p>
+        <script src="https://insurons.com/embed/insurons-widget.js" data-key="DEMO_MAXIMUS_KEY" data-mode="inline"></script>
+      </div>
+    </div>
+  </section>
+
+  <section class="carriers">
+    <div class="carriers-inner">
+      <div class="carriers-label">Trusted Carrier Partners</div>
+      <div class="carrier-logos">
+        <span class="carrier-logo">State Farm</span>
+        <span class="carrier-logo">Progressive</span>
+        <span class="carrier-logo">Allstate</span>
+        <span class="carrier-logo">USAA</span>
+        <span class="carrier-logo">Liberty Mutual</span>
+        <span class="carrier-logo">Travelers</span>
+        <span class="carrier-logo">Nationwide</span>
+        <span class="carrier-logo">Hartford</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="services-inner">
+      <div class="section-header">
+        <h2>Comprehensive Coverage Solutions</h2>
+        <p>From personal lines to complex commercial risks, Maximus has you covered.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card"><div class="service-icon icon-auto">&#128663;</div><h3>Auto Insurance</h3><p>Full coverage, liability, collision, and comprehensive policies. Multi-vehicle discounts. We compare 20+ carriers to find your best rate.</p></div>
+        <div class="service-card"><div class="service-icon icon-home">&#127968;</div><h3>Homeowners Insurance</h3><p>Protect your home, belongings, and liability. Standard HO-3 to high-value dwelling. Bundling discounts up to 25%.</p></div>
+        <div class="service-card"><div class="service-icon icon-life">&#9829;</div><h3>Life Insurance</h3><p>Term, whole, and universal life policies. $100K to $10M+ coverage. Guaranteed issue and simplified underwriting options.</p></div>
+        <div class="service-card"><div class="service-icon icon-health">&#127973;</div><h3>Health & Medicare</h3><p>Individual health plans, Medicare Advantage, Medigap supplements, and Part D prescription coverage.</p></div>
+        <div class="service-card"><div class="service-icon icon-biz">&#127970;</div><h3>Commercial Insurance</h3><p>GL, professional liability, workers' comp, commercial auto, and BOP packages for small to mid-size businesses.</p></div>
+        <div class="service-card"><div class="service-icon icon-spec">&#128737;</div><h3>Specialty Coverage</h3><p>Umbrella, flood, earthquake, cyber liability, and D&O coverage. E&S market access for hard-to-place risks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section" id="quote">
+    <div class="quote-inner">
+      <div class="quote-text">
+        <h2>Instant Quotes. Real Savings.</h2>
+        <p>Our technology compares rates from 50+ top-rated carriers simultaneously. No phone calls. No pressure. Just transparent pricing.</p>
+        <ul class="quote-features">
+          <li>Instant side-by-side carrier comparison</li>
+          <li>Real-time pricing from A-rated carriers only</li>
+          <li>No personal information required to see rates</li>
+          <li>Licensed agents available if you need help</li>
+          <li>Save up to $340/year on average</li>
+          <li>Bundle home + auto for additional 15-25% off</li>
+        </ul>
+      </div>
+      <div class="quote-widget">
+        <script src="https://insurons.com/embed/insurons-widget.js" data-key="DEMO_MAXIMUS_KEY" data-mode="inline" data-type="auto"></script>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="about">
+    <div class="testimonials-inner">
+      <div class="section-header">
+        <h2>What Our Clients Say</h2>
+        <p>Hear from families and businesses we've protected.</p>
+      </div>
+      <div class="test-grid">
+        <div class="test-card">
+          <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Maximus saved us $480/year on our home and auto bundle. The online quote tool made it incredibly easy."</blockquote>
+          <div class="test-author"><div class="test-avatar">RJ</div><div><div class="test-name">Robert Johnson</div><div class="test-role">Homeowner, Dallas TX</div></div></div>
+        </div>
+        <div class="test-card">
+          <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Needed GL + workers' comp fast. Maximus got me covered within 24 hours. Their commercial team knows their stuff."</blockquote>
+          <div class="test-author"><div class="test-avatar">SP</div><div><div class="test-name">Sarah Patel</div><div class="test-role">Business Owner, Austin TX</div></div></div>
+        </div>
+        <div class="test-card">
+          <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Been with Maximus 6 years. When my roof was damaged in a storm, they had the claim handled in days."</blockquote>
+          <div class="test-author"><div class="test-avatar">MC</div><div><div class="test-name">Maria Chen</div><div class="test-role">Homeowner, Houston TX</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <h2>Ready to Save on Your Insurance?</h2>
+    <p>Join 25,000+ clients who trust Maximus for their coverage needs.</p>
+    <a href="#quote" class="cta-btn">Get Your Free Quote Now &rarr;</a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo"><div class="logo-mark">M</div><span class="logo-text">MAXIMUS</span></a>
+          <p>Maximus Insurance Group has been protecting Texas families and businesses since 1998. Independent, trusted, and always in your corner.</p>
+        </div>
+        <div><h4>Insurance</h4><ul><li><a href="#services">Auto</a></li><li><a href="#services">Homeowners</a></li><li><a href="#services">Life</a></li><li><a href="#services">Commercial</a></li><li><a href="#services">Health</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#about">Our Team</a></li><li><a href="#contact">Careers</a></li><li><a href="#contact">Contact</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="tel:8005551234">800-555-1234</a></li><li><a href="mailto:info@maximusinsurance.com">info@maximusinsurance.com</a></li><li><a>4200 Main St, Suite 300<br>Dallas, TX 75201</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Maximus Insurance Group. Licensed in all 50 states.</span>
+        <div class="footer-badges"><span class="footer-badge">BBB A+ Rated</span><span class="footer-badge">Licensed & Insured</span></div>
+      </div>
+    </div>
+  </footer>
+  <div class="powered"><span>Quotes powered by <a href="https://insurons.com">Insurons</a> Partner API</span></div>
+
+</body>
+</html>
